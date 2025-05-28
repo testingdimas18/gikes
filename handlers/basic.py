@@ -6,7 +6,7 @@ from bot.core.keyboards import help as help_keyboard
 from pyrogram.types import ReplyKeyboardRemove
 from bot.config import OWNER_ID  # Import OWNER_ID
 
-BOT_USERNAME = "nama_bot_anda"  # Ganti dengan username bot Anda
+BOT_USERNAME = "@AnkesClayBot"  # Ganti dengan username bot Anda
 
 @bot_instance.on_message(filters.command("start"))
 async def start(client, message):
