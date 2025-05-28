@@ -26,4 +26,4 @@ else
 fi
 
 # Jalankan bot Python
-python bot/main.py
+python main.py
