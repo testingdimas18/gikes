@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Dapatkan direktori script saat ini
+SCRIPT_DIR=$(dirname "$0")
+
+# Pindah ke direktori proyek bot
+cd "$SCRIPT_DIR"
+
+# Aktifkan virtual environment (jika digunakan)
+if [ -f "venv/bin/activate" ]; then
+  source "venv/bin/activate"
+elif [ -f ".venv/bin/activate" ]; then
+  source ".venv/bin/activate"
+fi
+
+# Set environment variables (gunakan .env file jika ada)
+if [ -f ".env" ]; then
+  export $(grep -v '^#' .env | xargs)
+else
+  export BOT_TOKEN="${BOT_TOKEN:-YOUR_BOT_TOKEN}"
+  export MONGO_URI="${MONGO_URI:-mongodb://localhost:27017/}"
+  export DATABASE_NAME="${DATABASE_NAME:-nama_database_bot_anda}"
+  export API_ID="${API_ID:-YOUR_API_ID}"
+  export API_HASH="${API_HASH:-YOUR_API_HASH}"
+  export OWNER_ID="${OWNER_ID:-YOUR_OWNER_ID}"
+fi
+
+# Jalankan bot Python
+python bot/main.py
