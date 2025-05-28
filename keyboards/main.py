@@ -2,7 +2,7 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from bot.config import OWNER_ID
 
-BOT_USERNAME = "nama_bot_anda"  # Ganti dengan username bot Anda
+BOT_USERNAME = "AnkesClayBot"  # Ganti dengan username bot Anda
 
 def create_main_keyboard():
     owner_link = f"tg://user?id={OWNER_ID}"
