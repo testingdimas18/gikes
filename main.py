@@ -1,6 +1,7 @@
-# gikes/bot/main.py
+# main.py
 import os
-from pyrogram import import_module
+from importlib import import_module
+from pyrogram import Client
 from bot.core.bot import bot_instance
 
 if __name__ == "__main__":
